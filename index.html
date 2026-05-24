@@ -242,6 +242,7 @@
       padding: 12px;
       line-height: 1.4;
       font-size: 13px;
+      margin-top: 10px;
     }
 
     .danger {
@@ -252,6 +253,7 @@
       padding: 12px;
       line-height: 1.4;
       font-size: 13px;
+      margin-top: 10px;
     }
 
     code {
@@ -260,6 +262,13 @@
       border-radius: 8px;
       padding: 2px 6px;
       color: #facc15;
+    }
+
+    .smallnote {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+      margin-top: 8px;
     }
 
     @media (max-width: 560px) {
@@ -274,7 +283,7 @@
 <body>
   <header>
     <h1>CRE — Disparador Assistido</h1>
-    <small>Campo de teste isolado • sem mexer na Central de Trabalho</small>
+    <small>Fila operacional via WhatsApp • base GitHub + progresso salvo no aparelho</small>
   </header>
 
   <main>
@@ -309,29 +318,47 @@ Que esta mensagem traga lucidez e paz para a sua vida. Bom descanso.</textarea>
       <div class="card">
         <h2>Regra de segurança</h2>
         <div class="warning">
-          Este protótipo não envia nada sozinho. Ele apenas abre o WhatsApp com a mensagem pronta. O envio final continua sendo confirmado por você dentro do WhatsApp.
+          Este painel não envia nada sozinho. Ele abre o WhatsApp com a mensagem pronta.
+          Nesta versão operacional, ao clicar em <b>Abrir WhatsApp e avançar</b>, o contato é marcado como enviado no painel e a fila já prepara o próximo.
         </div>
       </div>
     </section>
 
     <section id="tab-contatos" class="panel hidden">
       <div class="card">
-        <h2>2. Lista de contatos</h2>
+        <h2>2. Base de contatos</h2>
+        <div id="baseStatus" class="warning">
+          Carregando base de contatos do GitHub...
+        </div>
+
+        <button class="btn btn-blue" onclick="carregarBaseGithub(true)">CARREGAR / SINCRONIZAR BASE DO GITHUB</button>
+
+        <div class="smallnote">
+          A lista-mãe vem do arquivo <code>contatos-cre.json</code>. O progresso da missão e novos contatos adicionados aqui ficam salvos neste aparelho.
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Adicionar contato novo</h2>
         <label for="contatoNome">Nome</label>
-        <input id="contatoNome" placeholder="Ex.: Luciano" />
+        <input id="contatoNome" placeholder="Ex.: Novo contato" />
 
-        <label for="contatoFone">Telefone com DDD</label>
-        <input id="contatoFone" placeholder="Ex.: 32999999999 ou 5532999999999" />
+        <label for="contatoFone">Telefone com DDI + DDD</label>
+        <input id="contatoFone" placeholder="Ex.: 5532999999999" />
 
-        <button class="btn btn-green" onclick="adicionarContato()">ADICIONAR CONTATO</button>
+        <button class="btn btn-green" onclick="adicionarContato()">ADICIONAR CONTATO À FILA</button>
+        <div class="smallnote">
+          Use isto só para acrescentar um contato novo depois da base inicial. Ele entra como pendente, sem apagar a lista já carregada.
+        </div>
+      </div>
 
-        <label for="importar">Importar vários contatos</label>
-        <textarea id="importar" placeholder="Um por linha:
-Luciano;32999999999
-Cíntia;5532999999999"></textarea>
-
-        <button class="btn btn-blue" onclick="importarContatos()">IMPORTAR LISTA</button>
-        <button class="btn btn-border" onclick="limparContatos()">LIMPAR TODOS OS CONTATOS</button>
+      <div class="card">
+        <h2>Manutenção</h2>
+        <button class="btn btn-border" onclick="limparApenasStatus()">ZERAR ENVIADOS/PULADOS</button>
+        <button class="btn btn-red" onclick="limparTudoLocal()">APAGAR BASE LOCAL DESTE APARELHO</button>
+        <div class="smallnote">
+          Apagar a base local não apaga o GitHub. Depois é só carregar a base novamente.
+        </div>
       </div>
 
       <div class="card">
@@ -354,12 +381,12 @@ Cíntia;5532999999999"></textarea>
       </div>
 
       <div class="card">
-        <h2>Sequência segura</h2>
+        <h2>Sequência operacional</h2>
         <div class="warning">
-          1) Clique em <b>Abrir WhatsApp</b>.<br>
-          2) Confira a conversa e envie manualmente.<br>
-          3) Volte para este painel.<br>
-          4) Clique em <b>Marcar enviado e próximo</b>.
+          1) Confira o nome exibido.<br>
+          2) Clique em <b>Abrir WhatsApp e avançar</b>.<br>
+          3) Envie manualmente dentro do WhatsApp.<br>
+          4) Ao voltar para o painel, o próximo contato já estará pronto.
         </div>
       </div>
     </section>
@@ -373,24 +400,28 @@ Cíntia;5532999999999"></textarea>
       </div>
 
       <div class="card">
-        <h2>Arquitetura futura</h2>
+        <h2>Arquitetura atual</h2>
         <div class="ok">
-          Etapa 1: este PWA salva tudo localmente no aparelho.<br>
-          Etapa 2: depois de aprovado, ligamos Firebase para salvar na nuvem.<br>
-          Etapa 3: só depois disso a Central de Trabalho recebe um botão apontando para o módulo aprovado.
+          Base inicial: <code>contatos-cre.json</code> no GitHub Pages.<br>
+          Progresso: salvo no aparelho via navegador/PWA.<br>
+          Novos contatos: entram na base local deste aparelho.<br>
+          Sem planilha Google. Sem Apps Script.
         </div>
       </div>
     </section>
   </main>
 
   <script>
-    const STORAGE_KEY = "cre_disparador_pwa_v0";
+    const STORAGE_KEY = "cre_disparador_pwa_v1_fila";
+    const BASE_URL = "./contatos-cre.json";
 
     const defaultState = {
       titulo: "Estudo Semanal",
       mensagem: "",
       contatos: [],
-      log: []
+      log: [],
+      baseCarregadaEm: "",
+      origemBase: ""
     };
 
     let state = carregarEstado();
@@ -417,6 +448,85 @@ Cíntia;5532999999999"></textarea>
       return n;
     }
 
+    function criarId(nome, telefone) {
+      const base = String(nome || "contato")
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "contato";
+      return base + "-" + String(telefone || "").slice(-4);
+    }
+
+    function normalizarContato(c) {
+      const nome = (c.nome || c.name || "").trim();
+      const telefone = normalizarTelefone(c.telefone || c.fone || c.phone || "");
+      return {
+        id: c.id || criarId(nome, telefone),
+        nome,
+        fone: telefone,
+        status: (c.status || "PENDENTE").toUpperCase() === "PENDENTE" ? "PENDENTE" : (c.status || "PENDENTE").toUpperCase(),
+        quando: c.quando || "",
+        origem: c.origem || "github"
+      };
+    }
+
+    async function carregarBaseGithub(forcar = false) {
+      const status = document.getElementById("baseStatus");
+
+      if (state.contatos.length && !forcar) {
+        atualizarBaseStatus("Base local já carregada neste aparelho.", "ok");
+        return;
+      }
+
+      try {
+        atualizarBaseStatus("Buscando contatos-cre.json no GitHub...", "warning");
+
+        const url = BASE_URL + "?v=" + Date.now();
+        const resp = await fetch(url, { cache: "no-store" });
+
+        if (!resp.ok) throw new Error("HTTP " + resp.status);
+
+        const data = await resp.json();
+        const lista = Array.isArray(data.contatos) ? data.contatos : [];
+
+        let adicionados = 0;
+        let ignorados = 0;
+
+        lista.forEach(item => {
+          const c = normalizarContato(item);
+          if (!c.nome || !c.fone) return;
+
+          const existe = state.contatos.some(x => x.fone === c.fone || x.id === c.id);
+          if (existe) {
+            ignorados++;
+            return;
+          }
+
+          state.contatos.push(c);
+          adicionados++;
+        });
+
+        state.baseCarregadaEm = new Date().toLocaleString("pt-BR");
+        state.origemBase = "contatos-cre.json";
+        state.log.push({
+          acao: "CARREGOU_BASE_GITHUB",
+          adicionados,
+          ignorados,
+          quando: state.baseCarregadaEm
+        });
+
+        salvarEstado();
+        atualizarBaseStatus(`Base carregada. ${adicionados} contato(s) adicionados. ${ignorados} já existiam.`, "ok");
+      } catch (e) {
+        atualizarBaseStatus("Falha ao carregar contatos-cre.json. Confira se o arquivo está na raiz do GitHub Pages.", "danger");
+      }
+    }
+
+    function atualizarBaseStatus(texto, tipo = "warning") {
+      const el = document.getElementById("baseStatus");
+      if (!el) return;
+      el.className = tipo;
+      el.innerHTML = texto;
+    }
+
     function salvarMensagem() {
       state.titulo = document.getElementById("titulo").value.trim() || "Missão CRE";
       state.mensagem = document.getElementById("mensagem").value.trim();
@@ -429,45 +539,54 @@ Cíntia;5532999999999"></textarea>
     function adicionarContato() {
       const nome = document.getElementById("contatoNome").value.trim();
       const fone = normalizarTelefone(document.getElementById("contatoFone").value);
+
       if (!nome || !fone) {
         alert("Informe nome e telefone.");
         return;
       }
-      state.contatos.push({ id: crypto.randomUUID(), nome, fone, status: "PENDENTE", quando: "" });
+
+      if (state.contatos.some(c => c.fone === fone)) {
+        alert("Este telefone já está na lista.");
+        return;
+      }
+
+      state.contatos.push({
+        id: criarId(nome, fone),
+        nome,
+        fone,
+        status: "PENDENTE",
+        quando: "",
+        origem: "manual"
+      });
+
+      state.log.push({ acao: "ADICIONOU_CONTATO", nome, fone, quando: new Date().toLocaleString("pt-BR") });
+
       document.getElementById("contatoNome").value = "";
       document.getElementById("contatoFone").value = "";
       salvarEstado();
     }
 
-    function importarContatos() {
-      const raw = document.getElementById("importar").value.trim();
-      if (!raw) return;
-      const linhas = raw.split(/\n+/);
-      let count = 0;
-
-      linhas.forEach(linha => {
-        const partes = linha.split(/[;,]/);
-        const nome = (partes[0] || "").trim();
-        const fone = normalizarTelefone((partes[1] || "").trim());
-        if (nome && fone) {
-          state.contatos.push({ id: crypto.randomUUID(), nome, fone, status: "PENDENTE", quando: "" });
-          count++;
-        }
-      });
-
-      document.getElementById("importar").value = "";
+    function limparApenasStatus() {
+      if (!confirm("Zerar enviados e pulados, voltando todos para PENDENTE?")) return;
+      state.contatos = state.contatos.map(c => ({ ...c, status: "PENDENTE", quando: "" }));
+      state.log.push({ acao: "ZEROU_STATUS", quando: new Date().toLocaleString("pt-BR") });
       salvarEstado();
-      alert(count + " contato(s) importado(s).");
+    }
+
+    function limparTudoLocal() {
+      if (!confirm("Apagar contatos, status e relatório salvos neste aparelho?")) return;
+      localStorage.removeItem(STORAGE_KEY);
+      state = structuredClone(defaultState);
+      atualizarTudo();
+      atualizarBaseStatus("Base local apagada. Clique em carregar/sincronizar para puxar do GitHub novamente.", "warning");
     }
 
     function limparContatos() {
-      if (!confirm("Limpar todos os contatos deste campo de teste?")) return;
-      state.contatos = [];
-      state.log.push({ acao: "LIMPOU_CONTATOS", quando: new Date().toLocaleString("pt-BR") });
-      salvarEstado();
+      limparTudoLocal();
     }
 
     function removerContato(id) {
+      if (!confirm("Remover este contato da base local deste aparelho?")) return;
       state.contatos = state.contatos.filter(c => c.id !== id);
       salvarEstado();
     }
@@ -483,17 +602,26 @@ Cíntia;5532999999999"></textarea>
       return state.contatos.find(c => c.status === "PENDENTE");
     }
 
-    function abrirWhatsApp(id) {
+    function abrirWhatsAppEAvancar(id) {
       salvarMensagem();
+
       const c = state.contatos.find(x => x.id === id);
       if (!c) return;
+
       if (!state.mensagem) {
         alert("Cadastre a mensagem primeiro.");
         return;
       }
 
+      c.status = "ENVIADO";
+      c.quando = new Date().toLocaleString("pt-BR");
+      state.log.push({ acao: "ABRIU_WHATSAPP_AVANCOU", nome: c.nome, fone: c.fone, quando: c.quando });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+
       const url = "https://wa.me/" + c.fone + "?text=" + encodeURIComponent(state.mensagem);
       window.open(url, "_blank");
+
+      atualizarTudo();
     }
 
     function marcar(id, status) {
@@ -505,10 +633,31 @@ Cíntia;5532999999999"></textarea>
       salvarEstado();
     }
 
+    function desfazerUltimo() {
+      const enviados = state.contatos.filter(c => c.status === "ENVIADO" && c.quando);
+      if (!enviados.length) return alert("Não há envio para desfazer.");
+
+      enviados.sort((a, b) => new Date(converterData(a.quando)) - new Date(converterData(b.quando)));
+      const ultimo = enviados[enviados.length - 1];
+
+      if (!confirm("Voltar " + ultimo.nome + " para PENDENTE?")) return;
+
+      ultimo.status = "PENDENTE";
+      ultimo.quando = "";
+      state.log.push({ acao: "DESFEZ_ULTIMO_ENVIO", nome: ultimo.nome, fone: ultimo.fone, quando: new Date().toLocaleString("pt-BR") });
+      salvarEstado();
+    }
+
+    function converterData(str) {
+      const m = String(str).match(/(\d{2})\/(\d{2})\/(\d{4}),?\s+(\d{2}):(\d{2}):(\d{2})/);
+      if (!m) return new Date();
+      return `${m[3]}-${m[2]}-${m[1]}T${m[4]}:${m[5]}:${m[6]}`;
+    }
+
     function atualizarLista() {
       const box = document.getElementById("listaContatos");
       if (!state.contatos.length) {
-        box.innerHTML = "<div class='danger'>Nenhum contato cadastrado ainda.</div>";
+        box.innerHTML = "<div class='danger'>Nenhum contato carregado ainda. Clique em carregar/sincronizar base do GitHub.</div>";
         return;
       }
 
@@ -518,10 +667,10 @@ Cíntia;5532999999999"></textarea>
           <div class="contact">
             <div>
               <strong>${escapeHtml(c.nome)}</strong>
-              <small>${c.fone}</small>
+              <small>${escapeHtml(c.fone)} • ${escapeHtml(c.origem || "local")}</small>
             </div>
             <div>
-              <span class="pill ${pillClass}">${c.status}</span>
+              <span class="pill ${pillClass}">${escapeHtml(c.status)}</span>
               <button class="btn btn-border" style="padding:7px;margin-top:6px;font-size:12px" onclick="removerContato('${c.id}')">remover</button>
             </div>
           </div>
@@ -544,7 +693,10 @@ Cíntia;5532999999999"></textarea>
       const box = document.getElementById("alvoConteudo");
 
       if (!total) {
-        box.innerHTML = "<div class='danger'>Cadastre contatos antes de iniciar.</div>";
+        box.innerHTML = `
+          <div class='danger'>Nenhum contato carregado.</div>
+          <button class="btn btn-blue" onclick="carregarBaseGithub(true)">CARREGAR BASE DO GITHUB</button>
+        `;
         return;
       }
 
@@ -558,10 +710,10 @@ Cíntia;5532999999999"></textarea>
 
       box.innerHTML = `
         <div class="targetName">${escapeHtml(alvo.nome)}</div>
-        <div class="targetPhone">${alvo.fone}</div>
-        <button class="btn btn-green" onclick="abrirWhatsApp('${alvo.id}')">📲 ABRIR WHATSAPP</button>
-        <button class="btn btn-blue" onclick="marcar('${alvo.id}', 'ENVIADO')">MARCAR ENVIADO E PRÓXIMO</button>
+        <div class="targetPhone">${escapeHtml(alvo.fone)}</div>
+        <button class="btn btn-green" onclick="abrirWhatsAppEAvancar('${alvo.id}')">📲 ABRIR WHATSAPP E AVANÇAR</button>
         <button class="btn btn-gray" onclick="marcar('${alvo.id}', 'PULAR')">PULAR ESTE CONTATO</button>
+        <button class="btn btn-border" onclick="desfazerUltimo()">DESFAZER ÚLTIMO ENVIO</button>
       `;
     }
 
@@ -579,7 +731,7 @@ Cíntia;5532999999999"></textarea>
           <div class="stat"><b>${skip}</b><span>Pulados</span></div>
         </div>
         <label>Últimos registros</label>
-        <textarea readonly>${state.log.slice(-30).map(l => JSON.stringify(l)).join("\n") || "Sem registros ainda."}</textarea>
+        <textarea readonly>${state.log.slice(-40).map(l => JSON.stringify(l)).join("\n") || "Sem registros ainda."}</textarea>
       `;
     }
 
@@ -588,9 +740,10 @@ Cíntia;5532999999999"></textarea>
         "CRE — Relatório da missão",
         "Missão: " + state.titulo,
         "Gerado em: " + new Date().toLocaleString("pt-BR"),
+        "Base carregada em: " + (state.baseCarregadaEm || "não informado"),
         "",
         "CONTATOS:",
-        ...state.contatos.map(c => `${c.nome};${c.fone};${c.status};${c.quando || ""}`),
+        ...state.contatos.map(c => `${c.nome};${c.fone};${c.status};${c.quando || ""};${c.origem || ""}`),
         "",
         "LOG:",
         ...state.log.map(l => JSON.stringify(l))
@@ -616,6 +769,11 @@ Cíntia;5532999999999"></textarea>
     function atualizarTudo() {
       document.getElementById("titulo").value = state.titulo || "Missão CRE";
       if (state.mensagem) document.getElementById("mensagem").value = state.mensagem;
+
+      if (state.contatos.length) {
+        atualizarBaseStatus(`Base operacional pronta: ${state.contatos.length} contato(s). Última carga: ${state.baseCarregadaEm || "local"}.`, "ok");
+      }
+
       atualizarLista();
       atualizarDisparo();
       atualizarRelatorio();
@@ -636,6 +794,7 @@ Cíntia;5532999999999"></textarea>
     }
 
     atualizarTudo();
+    carregarBaseGithub(false);
   </script>
 </body>
 </html>
