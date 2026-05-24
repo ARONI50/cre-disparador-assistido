@@ -1,0 +1,1629 @@
+{
+  "versao": "1.0",
+  "projeto": "CRE Disparador Assistido",
+  "descricao": "Base inicial de contatos para operação assistida via WhatsApp.",
+  "total_contatos": 135,
+  "atualizado_em": "2026-05-24T10:59:31",
+  "contatos": [
+    {
+      "id": "luciano-aroni-ferreira",
+      "nome": "LUCIANO ARONI FERREIRA",
+      "telefone": "5532991164812",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "preta",
+      "nome": "Preta",
+      "telefone": "5532999667289",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "dani",
+      "nome": "Dani",
+      "telefone": "5532987053396",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "paula-afonso",
+      "nome": "Paula Afonso",
+      "telefone": "447864685269",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "barbara",
+      "nome": "Barbara",
+      "telefone": "5532999722212",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "julio",
+      "nome": "Júlio",
+      "telefone": "5532988548246",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "junior",
+      "nome": "Júnior",
+      "telefone": "5532991653821",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "mae",
+      "nome": "Mãe",
+      "telefone": "5532984129691",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "rogerio",
+      "nome": "Rogerio",
+      "telefone": "5532988167142",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "sandro",
+      "nome": "Sandro",
+      "telefone": "5532999569683",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "tia-regina",
+      "nome": "Tia Regina",
+      "telefone": "5532998047947",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "abreu",
+      "nome": "Abreu",
+      "telefone": "5532988387334",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "adenilson",
+      "nome": "Adenilson",
+      "telefone": "5532988938569",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "adilson-viado",
+      "nome": "Adilson Viado",
+      "telefone": "5532988199148",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "aguinaldo",
+      "nome": "Aguinaldo",
+      "telefone": "5532999652252",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "alan-nova-zelandia",
+      "nome": "Alan Nova Zelândia",
+      "telefone": "5532988998234",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "alexandre-marini",
+      "nome": "Alexandre Marini",
+      "telefone": "5532998244919",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "aloisio-pedreiro",
+      "nome": "Aloísio Pedreiro",
+      "telefone": "5532988584938",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "ambrosio-pequeno",
+      "nome": "Ambrosio Pequeno",
+      "telefone": "5532988313999",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "anderson-bicas",
+      "nome": "Anderson Bicas",
+      "telefone": "5532984552423",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "aquino",
+      "nome": "Aquino",
+      "telefone": "5532999262519",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "bacana-feira",
+      "nome": "Bacana Feira",
+      "telefone": "5532999669685",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "bruno-barbacena",
+      "nome": "Bruno Barbacena",
+      "telefone": "5532998605893",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "cafe",
+      "nome": "Café",
+      "telefone": "5532988253203",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "cap-lage",
+      "nome": "Cap Lage",
+      "telefone": "5532998429812",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "cap-moacir",
+      "nome": "Cap Moacir",
+      "telefone": "5532988732346",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "cardoso-narigao",
+      "nome": "Cardoso Narigão",
+      "telefone": "5532991405709",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "carlos-peixinho",
+      "nome": "CARLOS PEIXINHO",
+      "telefone": "5532998663649",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "cassio",
+      "nome": "Cássio",
+      "telefone": "5532991081225",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "cesar-tempo-certo",
+      "nome": "César Tempo Certo",
+      "telefone": "5532991439187",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "cicero",
+      "nome": "Cicero",
+      "telefone": "5532999698787",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "cilmara",
+      "nome": "Cilmara",
+      "telefone": "5532988091740",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "coutinho",
+      "nome": "Coutinho",
+      "telefone": "5532988939274",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "cris-manejo",
+      "nome": "Cris Manejo",
+      "telefone": "5532988577562",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "dione",
+      "nome": "Dione",
+      "telefone": "5532984625362",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "dodo",
+      "nome": "Dodó",
+      "telefone": "5532984390505",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "dr-eonio",
+      "nome": "Dr Eonio",
+      "telefone": "5532988889542",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "eduardo-cantarino",
+      "nome": "Eduardo Cantarino",
+      "telefone": "553288207629",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "eduardo-catiucia",
+      "nome": "Eduardo Catiucia",
+      "telefone": "5532988268086",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "emiliano-b-log",
+      "nome": "Emiliano B Log",
+      "telefone": "5532999669260",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "ender-nanico",
+      "nome": "ENDER NANICO",
+      "telefone": "5532991054149",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "eudalecio",
+      "nome": "Eudalecio",
+      "telefone": "5532999529307",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "fabiano-santos-dumont-certo",
+      "nome": "Fabiano Santos Dumont Certo",
+      "telefone": "5532991996266",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "fernandes-banga",
+      "nome": "Fernandes Banga",
+      "telefone": "5532991265074",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "fernando-federal",
+      "nome": "Fernando Federal",
+      "telefone": "5524981218671",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "flavio-da-jo",
+      "nome": "Flávio Da Jô",
+      "telefone": "5511972314419",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "fran-ferreira",
+      "nome": "Fran Ferreira",
+      "telefone": "5532988900485",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "gatito",
+      "nome": "Gatito",
+      "telefone": "5532991431700",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "geraldo-muzulao",
+      "nome": "Geraldo Muzulão",
+      "telefone": "5532988714548",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "germano",
+      "nome": "Germano",
+      "telefone": "5532984442450",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "gerson",
+      "nome": "Gerson",
+      "telefone": "5532987097090",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "gilberto-marisol",
+      "nome": "Gilberto Marisol",
+      "telefone": "5532999665252",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "gledson",
+      "nome": "Gledson",
+      "telefone": "5532988127646",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "hilario",
+      "nome": "Hilário",
+      "telefone": "5532988734045",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "ilda-madrinha",
+      "nome": "Ilda Madrinha",
+      "telefone": "5532991972615",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "irmao-erlon",
+      "nome": "Irmão Erlon",
+      "telefone": "5532985076605",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "j-batista",
+      "nome": "J Batista",
+      "telefone": "556599281766",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "j-carlos-friburgo",
+      "nome": "J Carlos Friburgo",
+      "telefone": "5522999891170",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "joao-batista-a-alvim",
+      "nome": "Joao Batista A Alvim",
+      "telefone": "5532999092593",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "joao-rosa",
+      "nome": "João Rosa",
+      "telefone": "5532991995103",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "jorge-nego-motorista",
+      "nome": "Jorge Nego Motorista",
+      "telefone": "5532984835252",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "jorge-nego-veio",
+      "nome": "Jorge Nego Veio",
+      "telefone": "5532988447546",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "jorginho",
+      "nome": "Jorginho",
+      "telefone": "5532988292435",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "jose-divino",
+      "nome": "Jose Divino",
+      "telefone": "5565984420922",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "jose-pel-apoio",
+      "nome": "José Pel Apoio",
+      "telefone": "5532988292970",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "jose-santos-dumont",
+      "nome": "José Santos Dumont",
+      "telefone": "5532988029119",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "josimar",
+      "nome": "Josimar",
+      "telefone": "5532988458958",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "juliano",
+      "nome": "Juliano",
+      "telefone": "5532998621602",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "lopes",
+      "nome": "Lopes",
+      "telefone": "556599788328",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "louveira",
+      "nome": "Louveira",
+      "telefone": "556596036810",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "luciano-queijo",
+      "nome": "Luciano Queijo",
+      "telefone": "553298713097",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "luis-carlos-eb-feira",
+      "nome": "Luis Carlos EB Feira",
+      "telefone": "5532988296804",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "luiz-chacara",
+      "nome": "Luiz Chácara",
+      "telefone": "5532998314323",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "luiz-da-ilda",
+      "nome": "Luiz Da Ilda",
+      "telefone": "5532991991299",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "marasco-novo",
+      "nome": "Marasco Novo",
+      "telefone": "5532998089627",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "marcelo-pqd",
+      "nome": "Marcelo PQD",
+      "telefone": "5532988556480",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "marcelo-primo-barbacena",
+      "nome": "Marcelo Primo Barbacena",
+      "telefone": "5532991185344",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "marcio-bahiano",
+      "nome": "Márcio Bahiano",
+      "telefone": "5521966601405",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "marcio-break",
+      "nome": "Márcio Break",
+      "telefone": "5532988252975",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "marcos-cachorro-2",
+      "nome": "Marcos Cachorro 2",
+      "telefone": "5524981575025",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "marcos-mezenga",
+      "nome": "Marcos Mezenga",
+      "telefone": "5532991603144",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "mario-ribeiro",
+      "nome": "Mario Ribeiro",
+      "telefone": "553299343489",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "marquim-claro",
+      "nome": "Marquim Claro",
+      "telefone": "5532984704806",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "massari",
+      "nome": "Massari",
+      "telefone": "5532991786642",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "maurao",
+      "nome": "Maurão",
+      "telefone": "5532988960593",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "mauro-aroni",
+      "nome": "Mauro Aroni",
+      "telefone": "5532988334887",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "meirelles-10-bi",
+      "nome": "Meirelles 10 BI",
+      "telefone": "5532999004778",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "mota-10-bi",
+      "nome": "Mota 10° BI",
+      "telefone": "5532988699688",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "murilo-pel-apoio",
+      "nome": "Murilo Pel Apoio",
+      "telefone": "5532998260424",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "nilson",
+      "nome": "Nilson",
+      "telefone": "5533988706047",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "pires-pel-apoio",
+      "nome": "Pires Pel Apoio",
+      "telefone": "5532991000902",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "portes",
+      "nome": "Portes",
+      "telefone": "5531996918716",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "renato-cunhado-da-raquel",
+      "nome": "Renato Cunhado Da Raquel",
+      "telefone": "553299698862",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "roberto-paca",
+      "nome": "Roberto Paca",
+      "telefone": "5532988054173",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "rocha-xerife",
+      "nome": "Rocha Xerife",
+      "telefone": "5532999867558",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "rogerio-catumbi",
+      "nome": "Rogério Catumbi",
+      "telefone": "5532991234822",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "rubia",
+      "nome": "Rubia",
+      "telefone": "5532988213179",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "santiago",
+      "nome": "SANTIAGO",
+      "telefone": "5532999558032",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "sd-benito",
+      "nome": "SD Benito",
+      "telefone": "5532984656113",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "sd-jorge",
+      "nome": "Sd Jorge",
+      "telefone": "5532999903422",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "sergio-braz-92",
+      "nome": "Sergio Braz 92",
+      "telefone": "5532988078192",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "sergio-carcara",
+      "nome": "Sérgio Carcará",
+      "telefone": "5532991944471",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "sgt-douglas-caceres",
+      "nome": "Sgt Douglas Cáceres",
+      "telefone": "5565996181791",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "sgt-geraldo",
+      "nome": "Sgt GERALDO",
+      "telefone": "5535920011458",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "sgt-jesus",
+      "nome": "Sgt Jesus",
+      "telefone": "5532991280919",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "sgt-joelson-2",
+      "nome": "Sgt Joelson 2",
+      "telefone": "5532991049965",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "sgt-milton",
+      "nome": "Sgt Milton",
+      "telefone": "5532984358896",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "sgt-oseias",
+      "nome": "Sgt Oséias",
+      "telefone": "5567999016582",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "sgt-prof-nilton-cesar-patric",
+      "nome": "Sgt Prof Nilton Cesar Patric",
+      "telefone": "5521987871664",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "sgt-qe-natan",
+      "nome": "Sgt QE NATAN",
+      "telefone": "5538991978306",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "sr-jeferson-vizinho",
+      "nome": "Sr Jeferson Vizinho",
+      "telefone": "5532999497758",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "tania-boca-ruim",
+      "nome": "Tania Boca Ruim",
+      "telefone": "5532991206464",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "thiago-demlurb",
+      "nome": "Thiago Demlurb",
+      "telefone": "5532999379335",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "tia-arlete-novo",
+      "nome": "Tia ARLETE Novo",
+      "telefone": "5532984478810",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "tia-silene",
+      "nome": "Tia Silene",
+      "telefone": "5532991234346",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "tia-solange",
+      "nome": "Tia Solange",
+      "telefone": "5513982115880",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "tiago-filho-do-tadeu",
+      "nome": "Tiago Filho Do Tadeu",
+      "telefone": "5532991380953",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "tiago-primo",
+      "nome": "Tiago Primo",
+      "telefone": "5532991933433",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "tiaozinho-yoda",
+      "nome": "Tiãozinho Yoda",
+      "telefone": "5532998602378",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "tio-paulinho",
+      "nome": "Tio Paulinho",
+      "telefone": "5532984746666",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "toninho-trogo",
+      "nome": "Toninho Trogo",
+      "telefone": "5532984540209",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "ubirata-10-bi",
+      "nome": "Ubiratã 10 Bi",
+      "telefone": "5531972242983",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "walmir-vascaino",
+      "nome": "Walmir Vascaíno",
+      "telefone": "5532988812349",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "wanderley-belmiro-certo",
+      "nome": "Wanderley Belmiro Certo",
+      "telefone": "5532991213253",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "wilson-vovo-eb",
+      "nome": "Wilson Vovô Eb",
+      "telefone": "5532988539689",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "zagago",
+      "nome": "Zagago",
+      "telefone": "5532988105922",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "cb-leite",
+      "nome": "CB Leite",
+      "telefone": "5532935007026",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "claudio-motorista",
+      "nome": "Claudio Motorista",
+      "telefone": "5532984054460",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "lairton",
+      "nome": "Lairton",
+      "telefone": "5532988311553",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "tio-luiz-fernando",
+      "nome": "Tio Luiz Fernando",
+      "telefone": "5531987777930",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "tio-fabio",
+      "nome": "Tio Fabio",
+      "telefone": "5511998621744",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "tadeu",
+      "nome": "Tadeu",
+      "telefone": "5532988830075",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "tilde",
+      "nome": "Tilde",
+      "telefone": "5532998565099",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "joil-esteves",
+      "nome": "Joil Esteves",
+      "telefone": "5532991976193",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    },
+    {
+      "id": "jorge-pqd",
+      "nome": "Jorge PQD",
+      "telefone": "5522999272044",
+      "status": "pendente",
+      "rodadas": {
+        "manha": null,
+        "noite": null,
+        "extra": null
+      },
+      "observacao": ""
+    }
+  ]
+}
