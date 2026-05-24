@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0d0d0d" />
+  <link rel="manifest" href="manifest.json" />
+  <title>CRE — Disparador Assistido</title>
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --card: #1a1a1a;
+      --card2: #222;
+      --text: #f5f5f5;
+      --muted: #bdbdbd;
+      --yellow: #fbc02d;
+      --green: #25D366;
+      --blue: #1976d2;
+      --red: #d32f2f;
+      --border: #333;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: radial-gradient(circle at top, #1b1b1b, var(--bg));
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(13, 13, 13, .94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 16px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 18px;
+      margin: 0;
+      color: var(--yellow);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    header small {
+      display: block;
+      color: var(--muted);
+      margin-top: 4px;
+      font-size: 12px;
+    }
+
+    main {
+      width: 100%;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 14px;
+    }
+
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .tab {
+      border: 1px solid var(--border);
+      background: #151515;
+      color: var(--text);
+      border-radius: 12px;
+      padding: 11px 8px;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .tab.active {
+      border-color: var(--yellow);
+      color: var(--yellow);
+      background: #211d0e;
+    }
+
+    .card {
+      background: linear-gradient(180deg, var(--card), #151515);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 14px 40px rgba(0,0,0,.25);
+    }
+
+    .card h2 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      color: var(--yellow);
+    }
+
+    label {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin: 10px 0 6px;
+      font-weight: 700;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      background: #090909;
+      color: var(--text);
+      border: 1px solid #444;
+      border-radius: 12px;
+      padding: 12px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 170px;
+      resize: vertical;
+      line-height: 1.45;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .btn {
+      width: 100%;
+      border: 0;
+      border-radius: 14px;
+      padding: 14px 12px;
+      margin-top: 10px;
+      font-size: 15px;
+      font-weight: 900;
+      cursor: pointer;
+      color: white;
+    }
+
+    .btn-yellow { background: var(--yellow); color: #1a1400; }
+    .btn-green { background: var(--green); color: #062d17; }
+    .btn-blue { background: var(--blue); }
+    .btn-red { background: var(--red); }
+    .btn-gray { background: #4b5563; }
+    .btn-border { background: transparent; border: 1px solid #555; color: var(--text); }
+
+    .hidden { display: none !important; }
+
+    .statusbar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .stat {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 14px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .stat b {
+      display: block;
+      color: var(--yellow);
+      font-size: 20px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .contact {
+      border: 1px solid #333;
+      background: #111;
+      padding: 12px;
+      border-radius: 14px;
+      margin: 8px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .contact strong { display: block; }
+    .contact small { color: var(--muted); display: block; margin-top: 3px; }
+
+    .pill {
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 11px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .pill.pending { background: #3a300b; color: #facc15; }
+    .pill.sent { background: #052e16; color: #86efac; }
+    .pill.skip { background: #3b1111; color: #fca5a5; }
+
+    .target {
+      text-align: center;
+      border-left: 8px solid var(--yellow);
+    }
+
+    .targetName {
+      font-size: 28px;
+      font-weight: 1000;
+      text-transform: uppercase;
+      margin: 14px 0 4px;
+    }
+
+    .targetPhone {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .warning {
+      background: #251100;
+      border: 1px solid #9a5b00;
+      color: #ffd48a;
+      border-radius: 14px;
+      padding: 12px;
+      line-height: 1.4;
+      font-size: 13px;
+    }
+
+    .ok {
+      background: #071f12;
+      border: 1px solid #1b6b38;
+      color: #9ff0b9;
+      border-radius: 14px;
+      padding: 12px;
+      line-height: 1.4;
+      font-size: 13px;
+    }
+
+    .danger {
+      background: #260b0b;
+      border: 1px solid #7f1d1d;
+      color: #fecaca;
+      border-radius: 14px;
+      padding: 12px;
+      line-height: 1.4;
+      font-size: 13px;
+    }
+
+    code {
+      background: #050505;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 2px 6px;
+      color: #facc15;
+    }
+
+    @media (max-width: 560px) {
+      .tabs { grid-template-columns: repeat(2, 1fr); }
+      .row { grid-template-columns: 1fr; }
+      .statusbar { grid-template-columns: repeat(2, 1fr); }
+      main { padding: 10px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>CRE — Disparador Assistido</h1>
+    <small>Campo de teste isolado • sem mexer na Central de Trabalho</small>
+  </header>
+
+  <main>
+    <div class="tabs">
+      <button class="tab active" data-tab="mensagem">Mensagem</button>
+      <button class="tab" data-tab="contatos">Contatos</button>
+      <button class="tab" data-tab="disparo">Disparo</button>
+      <button class="tab" data-tab="relatorio">Relatório</button>
+    </div>
+
+    <section id="tab-mensagem" class="panel">
+      <div class="card">
+        <h2>1. Munição da missão</h2>
+        <label for="titulo">Nome da missão</label>
+        <input id="titulo" value="Estudo Semanal" />
+
+        <label for="mensagem">Mensagem que será enviada</label>
+        <textarea id="mensagem">Olá. O nosso Estudo Semanal já está no ar.
+
+Uma reflexão um pouco mais longa sobre a nossa jornada desta semana: buscar luz no caos, acalmar a mente, ter coragem para marchar e sabedoria para descansar. Assista com calma.
+
+Assista aqui 👇👇👇
+
+https://yt.openinapp.co/enymp
+
+Que esta mensagem traga lucidez e paz para a sua vida. Bom descanso.</textarea>
+
+        <button class="btn btn-yellow" onclick="salvarMensagem()">SALVAR MENSAGEM</button>
+        <div id="msgSave" class="ok hidden">Mensagem salva neste aparelho.</div>
+      </div>
+
+      <div class="card">
+        <h2>Regra de segurança</h2>
+        <div class="warning">
+          Este protótipo não envia nada sozinho. Ele apenas abre o WhatsApp com a mensagem pronta. O envio final continua sendo confirmado por você dentro do WhatsApp.
+        </div>
+      </div>
+    </section>
+
+    <section id="tab-contatos" class="panel hidden">
+      <div class="card">
+        <h2>2. Lista de contatos</h2>
+        <label for="contatoNome">Nome</label>
+        <input id="contatoNome" placeholder="Ex.: Luciano" />
+
+        <label for="contatoFone">Telefone com DDD</label>
+        <input id="contatoFone" placeholder="Ex.: 32999999999 ou 5532999999999" />
+
+        <button class="btn btn-green" onclick="adicionarContato()">ADICIONAR CONTATO</button>
+
+        <label for="importar">Importar vários contatos</label>
+        <textarea id="importar" placeholder="Um por linha:
+Luciano;32999999999
+Cíntia;5532999999999"></textarea>
+
+        <button class="btn btn-blue" onclick="importarContatos()">IMPORTAR LISTA</button>
+        <button class="btn btn-border" onclick="limparContatos()">LIMPAR TODOS OS CONTATOS</button>
+      </div>
+
+      <div class="card">
+        <h2>Contatos cadastrados</h2>
+        <div id="listaContatos"></div>
+      </div>
+    </section>
+
+    <section id="tab-disparo" class="panel hidden">
+      <div class="statusbar">
+        <div class="stat"><b id="stTotal">0</b><span>Total</span></div>
+        <div class="stat"><b id="stPend">0</b><span>Pendentes</span></div>
+        <div class="stat"><b id="stSent">0</b><span>Enviados</span></div>
+        <div class="stat"><b id="stSkip">0</b><span>Pulados</span></div>
+      </div>
+
+      <div class="card target" id="alvoBox">
+        <h2>3. Campo de tiro</h2>
+        <div id="alvoConteudo"></div>
+      </div>
+
+      <div class="card">
+        <h2>Sequência segura</h2>
+        <div class="warning">
+          1) Clique em <b>Abrir WhatsApp</b>.<br>
+          2) Confira a conversa e envie manualmente.<br>
+          3) Volte para este painel.<br>
+          4) Clique em <b>Marcar enviado e próximo</b>.
+        </div>
+      </div>
+    </section>
+
+    <section id="tab-relatorio" class="panel hidden">
+      <div class="card">
+        <h2>4. Relatório da missão</h2>
+        <div id="relatorio"></div>
+        <button class="btn btn-blue" onclick="baixarRelatorio()">BAIXAR RELATÓRIO TXT</button>
+        <button class="btn btn-red" onclick="resetarMissao()">RESETAR STATUS DA MISSÃO</button>
+      </div>
+
+      <div class="card">
+        <h2>Arquitetura futura</h2>
+        <div class="ok">
+          Etapa 1: este PWA salva tudo localmente no aparelho.<br>
+          Etapa 2: depois de aprovado, ligamos Firebase para salvar na nuvem.<br>
+          Etapa 3: só depois disso a Central de Trabalho recebe um botão apontando para o módulo aprovado.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const STORAGE_KEY = "cre_disparador_pwa_v0";
+
+    const defaultState = {
+      titulo: "Estudo Semanal",
+      mensagem: "",
+      contatos: [],
+      log: []
+    };
+
+    let state = carregarEstado();
+
+    function carregarEstado() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return structuredClone(defaultState);
+        return { ...structuredClone(defaultState), ...JSON.parse(raw) };
+      } catch (e) {
+        return structuredClone(defaultState);
+      }
+    }
+
+    function salvarEstado() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      atualizarTudo();
+    }
+
+    function normalizarTelefone(fone) {
+      let n = String(fone || "").replace(/\D/g, "");
+      if (!n) return "";
+      if (n.length === 10 || n.length === 11) n = "55" + n;
+      return n;
+    }
+
+    function salvarMensagem() {
+      state.titulo = document.getElementById("titulo").value.trim() || "Missão CRE";
+      state.mensagem = document.getElementById("mensagem").value.trim();
+      salvarEstado();
+      const box = document.getElementById("msgSave");
+      box.classList.remove("hidden");
+      setTimeout(() => box.classList.add("hidden"), 1800);
+    }
+
+    function adicionarContato() {
+      const nome = document.getElementById("contatoNome").value.trim();
+      const fone = normalizarTelefone(document.getElementById("contatoFone").value);
+      if (!nome || !fone) {
+        alert("Informe nome e telefone.");
+        return;
+      }
+      state.contatos.push({ id: crypto.randomUUID(), nome, fone, status: "PENDENTE", quando: "" });
+      document.getElementById("contatoNome").value = "";
+      document.getElementById("contatoFone").value = "";
+      salvarEstado();
+    }
+
+    function importarContatos() {
+      const raw = document.getElementById("importar").value.trim();
+      if (!raw) return;
+      const linhas = raw.split(/\n+/);
+      let count = 0;
+
+      linhas.forEach(linha => {
+        const partes = linha.split(/[;,]/);
+        const nome = (partes[0] || "").trim();
+        const fone = normalizarTelefone((partes[1] || "").trim());
+        if (nome && fone) {
+          state.contatos.push({ id: crypto.randomUUID(), nome, fone, status: "PENDENTE", quando: "" });
+          count++;
+        }
+      });
+
+      document.getElementById("importar").value = "";
+      salvarEstado();
+      alert(count + " contato(s) importado(s).");
+    }
+
+    function limparContatos() {
+      if (!confirm("Limpar todos os contatos deste campo de teste?")) return;
+      state.contatos = [];
+      state.log.push({ acao: "LIMPOU_CONTATOS", quando: new Date().toLocaleString("pt-BR") });
+      salvarEstado();
+    }
+
+    function removerContato(id) {
+      state.contatos = state.contatos.filter(c => c.id !== id);
+      salvarEstado();
+    }
+
+    function resetarMissao() {
+      if (!confirm("Resetar status para PENDENTE em todos os contatos?")) return;
+      state.contatos = state.contatos.map(c => ({ ...c, status: "PENDENTE", quando: "" }));
+      state.log.push({ acao: "RESET_STATUS", quando: new Date().toLocaleString("pt-BR") });
+      salvarEstado();
+    }
+
+    function proximoContato() {
+      return state.contatos.find(c => c.status === "PENDENTE");
+    }
+
+    function abrirWhatsApp(id) {
+      salvarMensagem();
+      const c = state.contatos.find(x => x.id === id);
+      if (!c) return;
+      if (!state.mensagem) {
+        alert("Cadastre a mensagem primeiro.");
+        return;
+      }
+
+      const url = "https://wa.me/" + c.fone + "?text=" + encodeURIComponent(state.mensagem);
+      window.open(url, "_blank");
+    }
+
+    function marcar(id, status) {
+      const c = state.contatos.find(x => x.id === id);
+      if (!c) return;
+      c.status = status;
+      c.quando = new Date().toLocaleString("pt-BR");
+      state.log.push({ acao: status, nome: c.nome, fone: c.fone, quando: c.quando });
+      salvarEstado();
+    }
+
+    function atualizarLista() {
+      const box = document.getElementById("listaContatos");
+      if (!state.contatos.length) {
+        box.innerHTML = "<div class='danger'>Nenhum contato cadastrado ainda.</div>";
+        return;
+      }
+
+      box.innerHTML = state.contatos.map(c => {
+        const pillClass = c.status === "ENVIADO" ? "sent" : c.status === "PULAR" ? "skip" : "pending";
+        return `
+          <div class="contact">
+            <div>
+              <strong>${escapeHtml(c.nome)}</strong>
+              <small>${c.fone}</small>
+            </div>
+            <div>
+              <span class="pill ${pillClass}">${c.status}</span>
+              <button class="btn btn-border" style="padding:7px;margin-top:6px;font-size:12px" onclick="removerContato('${c.id}')">remover</button>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function atualizarDisparo() {
+      const total = state.contatos.length;
+      const pend = state.contatos.filter(c => c.status === "PENDENTE").length;
+      const sent = state.contatos.filter(c => c.status === "ENVIADO").length;
+      const skip = state.contatos.filter(c => c.status === "PULAR").length;
+
+      document.getElementById("stTotal").textContent = total;
+      document.getElementById("stPend").textContent = pend;
+      document.getElementById("stSent").textContent = sent;
+      document.getElementById("stSkip").textContent = skip;
+
+      const alvo = proximoContato();
+      const box = document.getElementById("alvoConteudo");
+
+      if (!total) {
+        box.innerHTML = "<div class='danger'>Cadastre contatos antes de iniciar.</div>";
+        return;
+      }
+
+      if (!alvo) {
+        box.innerHTML = `
+          <div class="ok"><b>MISSÃO CONCLUÍDA.</b><br>Todos os contatos foram processados.</div>
+          <button class="btn btn-red" onclick="resetarMissao()">REINICIAR MISSÃO</button>
+        `;
+        return;
+      }
+
+      box.innerHTML = `
+        <div class="targetName">${escapeHtml(alvo.nome)}</div>
+        <div class="targetPhone">${alvo.fone}</div>
+        <button class="btn btn-green" onclick="abrirWhatsApp('${alvo.id}')">📲 ABRIR WHATSAPP</button>
+        <button class="btn btn-blue" onclick="marcar('${alvo.id}', 'ENVIADO')">MARCAR ENVIADO E PRÓXIMO</button>
+        <button class="btn btn-gray" onclick="marcar('${alvo.id}', 'PULAR')">PULAR ESTE CONTATO</button>
+      `;
+    }
+
+    function atualizarRelatorio() {
+      const total = state.contatos.length;
+      const pend = state.contatos.filter(c => c.status === "PENDENTE").length;
+      const sent = state.contatos.filter(c => c.status === "ENVIADO").length;
+      const skip = state.contatos.filter(c => c.status === "PULAR").length;
+
+      document.getElementById("relatorio").innerHTML = `
+        <div class="statusbar">
+          <div class="stat"><b>${total}</b><span>Total</span></div>
+          <div class="stat"><b>${pend}</b><span>Pendentes</span></div>
+          <div class="stat"><b>${sent}</b><span>Enviados</span></div>
+          <div class="stat"><b>${skip}</b><span>Pulados</span></div>
+        </div>
+        <label>Últimos registros</label>
+        <textarea readonly>${state.log.slice(-30).map(l => JSON.stringify(l)).join("\n") || "Sem registros ainda."}</textarea>
+      `;
+    }
+
+    function baixarRelatorio() {
+      const linhas = [
+        "CRE — Relatório da missão",
+        "Missão: " + state.titulo,
+        "Gerado em: " + new Date().toLocaleString("pt-BR"),
+        "",
+        "CONTATOS:",
+        ...state.contatos.map(c => `${c.nome};${c.fone};${c.status};${c.quando || ""}`),
+        "",
+        "LOG:",
+        ...state.log.map(l => JSON.stringify(l))
+      ];
+
+      const blob = new Blob([linhas.join("\n")], { type: "text/plain;charset=utf-8" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "relatorio-cre-disparador.txt";
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+
+    function escapeHtml(str) {
+      return String(str || "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function atualizarTudo() {
+      document.getElementById("titulo").value = state.titulo || "Missão CRE";
+      if (state.mensagem) document.getElementById("mensagem").value = state.mensagem;
+      atualizarLista();
+      atualizarDisparo();
+      atualizarRelatorio();
+    }
+
+    document.querySelectorAll(".tab").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tab").forEach(b => b.classList.remove("active"));
+        document.querySelectorAll(".panel").forEach(p => p.classList.add("hidden"));
+        btn.classList.add("active");
+        document.getElementById("tab-" + btn.dataset.tab).classList.remove("hidden");
+        atualizarTudo();
+      });
+    });
+
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./service-worker.js").catch(() => {});
+    }
+
+    atualizarTudo();
+  </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "CRE — Disparador Assistido",
+  "short_name": "CRE Disparo",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0d0d0d",
+  "theme_color": "#0d0d0d",
+  "description": "Campo de teste isolado para envio assistido via WhatsApp.",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
